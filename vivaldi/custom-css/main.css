@@ -1,0 +1,23 @@
+#header, #titlebar {
+    display: none !important;
+}
+
+/* Example for making the panel transparent (if not covered by theme settings) */
+#panels-container {
+    background-color: rgba(255, 255, 255, 0.2) !important; /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Optional blur */
+}
+
+/* Remove tab mute icon */
+#tabs-container .tab.tab-small.audio-on .tab-audio,
+#tabs-container .tab.pinned.audio-on .tab-audio,
+#tabs-container .tab.tab-small.audio-muted .tab-audio,
+#tabs-container .tab.pinned.audio-muted .tab-audio,
+#tabs-container .tab.tab-small.tab-captured .tab-audio,
+#tabs-container .tab.pinned.tab-captured .tab-audio {
+    display: none !important;
+}
+
+.theme-dark .tab-position .tab.active .tab-header .favicon {
+  filter: none !important;
+}

@@ -1,0 +1,8 @@
+[opener]
+open = [
+
+	{ run = 'nvim -u "C:\Users\Administrator\AppData\Roaming\lunarvim\lvim\init.lua" %*', block = true, desc = "lvim", for = "windows" },
+]
+edit = [
+	{ run = 'nvim -u "C:\Users\Administrator\AppData\Roaming\lunarvim\lvim\init.lua" %*', block = true, desc = "lvim", for = "windows" },
+]

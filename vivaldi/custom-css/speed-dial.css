@@ -1,0 +1,111 @@
+/*
+ * Vivaldi Transparent Homepage (Speed Dial) CSS
+ *
+ * Instructions:
+ * 1. Create a new folder somewhere on your computer, e.g., `C:\Vivaldi_Custom_CSS`.
+ * 2. Save this entire code block into a file named `transparent-startpage.css` inside that folder.
+ * 3. Open Vivaldi Settings (Ctrl+F12 or Cmd+, on macOS).
+ * 4. Go to `Appearance` in the left sidebar.
+ * 5. Scroll down to the `Custom CSS` section.
+ * 6. Click `Select Folder` and choose the folder you created in step 1.
+ * 7. Restart Vivaldi.
+ *
+ * IMPORTANT NOTES:
+ * - The transparency will show your desktop wallpaper or the window behind Vivaldi.
+ * - Readability can be an issue with fully transparent elements.
+ * - This CSS tries to keep text and icons visible.
+ * - You might need to adjust `rgba()` values or blur amounts (`backdrop-filter`) to perfectly match your theme and preferences.
+ * - If you experience issues, try commenting out sections or adjusting values.
+ */
+
+/* --- Option 1: Fully Transparent Homepage (Default) --- */
+
+/* Make the main start page background transparent */
+#browser.startpage-is-active .inner,
+#browser.startpage-is-active .startpage,
+#browser.startpage-is-active .startpage-content,
+#browser.startpage-is-active .startpage-navigation, /* Top bar with bookmarks/history */
+#browser.startpage-is-active .startpage-footer,    /* Bottom bar with settings/trash */
+#browser.startpage-is-active .startpage-panel {    /* Side panel if open on start page */
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important; /* Remove any lingering shadows */
+}
+
+/* Make Speed Dial tiles semi-transparent or fully transparent */
+.dial {
+    background-color: rgba(0, 0, 0, 0.1) !important; /* Subtle dark tint, adjust as needed */
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important; /* Keep a subtle shadow */
+    transition: background-color 0.2s ease-in-out;
+}
+
+.dial:hover {
+    background-color: rgba(0, 0, 0, 0.2) !important; /* Slightly darker on hover */
+}
+
+/* Make the search bar transparent */
+.search-field {
+    background-color: rgba(255, 255, 255, 0.1) !important; /* Subtle light tint */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important; /* Light border */
+    box-shadow: none !important;
+    color: inherit !important; /* Keep text color readable based on theme */
+    transition: background-color 0.2s ease-in-out;
+}
+.search-field:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+.search-field input {
+    background-color: transparent !important; /* Ensure input field itself is transparent */
+    color: inherit !important;
+}
+
+/* Make top/bottom navigation buttons semi-transparent */
+.startpage-navigation .button-startpage,
+.startpage-footer .button-startpage {
+    background-color: rgba(0, 0, 0, 0.1) !important; /* Subtle tint */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: inherit !important;
+    transition: background-color 0.2s ease-in-out;
+}
+.startpage-navigation .button-startpage:hover,
+.startpage-footer .button-startpage:hover {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+.startpage-navigation .button-startpage svg,
+.startpage-footer .button-startpage svg {
+    fill: currentColor !important; /* Ensure icons retain theme color */
+}
+
+/* --- Option 2: Frosted Glass (Blurred) Effect --- */
+/* Uncomment the block below if you prefer a blurred background instead of full transparency.
+   Remember to comment out or remove Option 1 if you use Option 2. */
+
+/*
+#browser.startpage-is-active .inner,
+#browser.startpage-is-active .startpage {
+    backdrop-filter: blur(10px) brightness(80%) !important;
+    background-color: rgba(0, 0, 0, 0.2) !important; // A very subtle dark tint behind the blur
+}
+
+// Apply less blur to elements on top for better visibility
+.dial {
+    backdrop-filter: blur(5px) brightness(90%) !important;
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.search-field {
+    backdrop-filter: blur(5px) brightness(90%) !important;
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.startpage-navigation .button-startpage,
+.startpage-footer .button-startpage {
+    backdrop-filter: blur(3px) brightness(90%) !important;
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+*/
