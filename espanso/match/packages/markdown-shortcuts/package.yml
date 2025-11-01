@@ -1,0 +1,46 @@
+matches:
+  - trigger: ":block"
+    label: "Markdown - Code block"
+    replace: |-
+        ```$|$
+        ```
+    force_clipboard: true
+
+  - trigger: ":code"
+    label: "Markdown - Inline code"
+    replace: |-
+        `$|$`
+    force_clipboard: true
+
+  - trigger: ":lb"
+    label: "Latex - Latex block"
+    replace: |-
+        $$
+        $|$
+        $$
+    force_clipboard: true
+
+  - trigger: ":ll"
+    label: "Latex - Latex line"
+    replace: |-
+        $$|$$
+    force_clipboard: true
+
+  - trigger: ":bold"
+    label: "Markdown - Bold"
+    replace: "**$|$**"
+
+  - trigger: ":italic"
+    label: "Markdown - Italic"
+    replace: "*$|$*"
+
+  - trigger: ":strike"
+    label: "Markdown - Strikethrough"
+    replace: "~~$|$~~"
+
+  - trigger: ":comment"
+    label: "Markdown - Comment"
+    replace: |-
+      %%
+      $|$
+      %%
