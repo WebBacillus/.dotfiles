@@ -1,0 +1,14 @@
+[[mgr.prepend_keymap]]
+on   = [ "g", "d" ]
+run  = "cd D:/Downloads"
+desc = "Downloads"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "D" ]
+run  = "cd ~/.dotfiles"
+desc = ".dotfiles"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "i" ]
+run  = "cd D:/ObsidianMD/content/Webbacillus"
+desc = "Cd to Obsidian"

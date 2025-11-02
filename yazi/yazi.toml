@@ -1,8 +1,40 @@
-[opener]
-open = [
+# ~/.config/yazi/yazi.toml
+[mgr]
+linemode = "size_and_mtime"
 
-	{ run = 'nvim -u "C:\Users\Administrator\AppData\Roaming\lunarvim\lvim\init.lua" %*', block = true, desc = "lvim", for = "windows" },
-]
+[plugin]
+  prepend_preloaders = [
+    { mime = "{audio,video,image}/*", run = "mediainfo" },
+    { mime = "application/subrip", run = "mediainfo" },
+    { mime = "application/postscript", run = "mediainfo" },
+  ]
+  prepend_previewers = [
+    { mime = "{audio,video,image}/*", run = "mediainfo"},
+    { mime = "application/subrip", run = "mediainfo" },
+    { mime = "application/postscript", run = "mediainfo" },
+  ]
+
+[tasks]
+  image_alloc      = 1073741824        # = 1024*1024*1024 = 1024MB
+
+
+[spot]
+# Section header style.
+# Example: Video, Text, Image,... with green color in preview images above
+title = { fg = "green" }
+
+# Value style.
+# Example: `Format: FLAC` with blue color in preview images above
+tbl_col = { fg = "blue" }
+
+[opener]
 edit = [
-	{ run = 'nvim -u "C:\Users\Administrator\AppData\Roaming\lunarvim\lvim\init.lua" %*', block = true, desc = "lvim", for = "windows" },
+	{ run = '$EDITOR "$@"', block = true, for = "unix" },
+	{ run = "%EDITOR% %*",  block = true, for = "windows" },
 ]
+
+play = [
+	{ run = 'mpv "$@"', orphan = true, for = "unix" },
+	{ run = '"C:\Program Files\mpv.exe" %*', orphan = true, for = "windows" }
+]
+

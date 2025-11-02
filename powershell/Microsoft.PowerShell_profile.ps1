@@ -12,6 +12,10 @@ function we
   wezterm cli spawn --new-window --cwd $currentPath
 }
 
+function code {
+    nvim $args
+}
+
 #
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\catppuccin_mocha.omp.json" | Invoke-Expression
 # oh-my-posh --init --shell pwsh --config $env:POSH_THEMES_PATH\dracula.omp.json | Invoke-Expression
@@ -60,7 +64,8 @@ Invoke-Expression (& { (zoxide init powershell --cmd cd | Out-String) })
 #  Import-Module "$ChocolateyProfile"
 # }
 
-$Env:YAZI_FILE_ONE = 'C:\Program Files\Git\usr\bin\file.exe'
+# $env:YAZI_CONFIG_HOME = '~/.config/yazi'
+$env:YAZI_FILE_ONE = 'C:/Program Files/Git/usr/bin/file.exe'
 
 function y
 {
