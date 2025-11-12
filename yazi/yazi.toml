@@ -35,6 +35,5 @@ edit = [
 
 play = [
 	{ run = 'mpv "$@"', orphan = true, for = "unix" },
-	{ run = '"C:\Program Files\mpv.exe" %*', orphan = true, for = "windows" }
 ]
 
