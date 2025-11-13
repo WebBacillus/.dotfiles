@@ -57,6 +57,9 @@ matches:
         params:
           cmd: "echo 'Hello from your shell'"
 
+  - trigger: ":center"
+    replace: "<center>$|$</center>"
+
   # Print the current time
   - trigger: ":now"
     replace: "{{current_time}}"
