@@ -1,1 +1,5 @@
 nvim/lazy-lock.json
+yasb/yasb.log.*
+ahk/*.exe
+
+yasb/yasb.log
