@@ -55,7 +55,8 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: "echo 'Hello from your shell'"
+          # cmd: "echo 'Hello from your shell'"
+          cmd: "pwsh -NoProfile -Command \"echo 'Hello from your shell'\""
 
   - trigger: ":center"
     replace: "<center>$|$</center>"
@@ -69,4 +70,16 @@ matches:
         params:
           format: "%H:%M"
 
-  # And much more! For more information, visit the docs: https://espanso.org/docs/
+  - trigger: ":rand"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          # cmd: openssl rand -hex 6
+          # cmd: |
+          #             $bytes = New-Object 'System.Byte[]' 6;
+          #             [System.Security.Cryptography.RNGCryptoServiceProvider]::Create().GetBytes($bytes);
+          #             ($bytes | ForEach-Object { $_.ToString("X2") }) -join ""
+          cmd: |
+            pwsh -NoProfile -Command "$bytes = New-Object 'byte[]' 6; [System.Security.Cryptography.RandomNumberGenerator]::Create().GetBytes($bytes); ($bytes | ForEach-Object { $_.ToString('X2') }) -join ''"
