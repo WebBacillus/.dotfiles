@@ -44,3 +44,18 @@ matches:
       %%
       $|$
       %%
+  - trigger: ":flow"
+    label: "Mermaid - Flowchart diagram"
+    replace: |-
+      ```mermaid
+      flowchart $|$
+      ```
+    force_clipboard: true
+  - trigger: ":seq"
+    label: "Mermaid - Sequence Diagram"
+    replace: |-
+      ```mermaid
+      sequenceDiagram
+      $|$
+      ```
+    force_clipboard: true

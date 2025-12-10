@@ -46,6 +46,8 @@ matches:
         params:
           format: "%d %b %Y, %A"
 
+
+
   # Print the output of a shell command
   - trigger: ":shell"
     replace: "{{output}}"
@@ -53,6 +55,31 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: "echo 'Hello from your shell'"
+          # cmd: "echo 'Hello from your shell'"
+          cmd: "pwsh -NoProfile -Command \"echo 'Hello from your shell'\""
 
-  # And much more! For more information, visit the docs: https://espanso.org/docs/
+  - trigger: ":center"
+    replace: "<center>$|$</center>"
+
+  # Print the current time
+  - trigger: ":now"
+    replace: "{{current_time}}"
+    vars:
+      - name: current_time
+        type: date
+        params:
+          format: "%H:%M"
+
+  - trigger: ":rand"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          # cmd: openssl rand -hex 6
+          # cmd: |
+          #             $bytes = New-Object 'System.Byte[]' 6;
+          #             [System.Security.Cryptography.RNGCryptoServiceProvider]::Create().GetBytes($bytes);
+          #             ($bytes | ForEach-Object { $_.ToString("X2") }) -join ""
+          cmd: |
+            pwsh -NoProfile -Command "$bytes = New-Object 'byte[]' 6; [System.Security.Cryptography.RandomNumberGenerator]::Create().GetBytes($bytes); ($bytes | ForEach-Object { $_.ToString('X2') }) -join ''"

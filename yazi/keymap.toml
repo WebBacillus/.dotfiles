@@ -10,5 +10,5 @@ desc = ".dotfiles"
 
 [[mgr.prepend_keymap]]
 on   = [ "g", "i" ]
-run  = "cd D:/ObsidianMD/content/Webbacillus"
+run  = "cd F:/ObsidianMD/content/Webbacillus"
 desc = "Cd to Obsidian"
