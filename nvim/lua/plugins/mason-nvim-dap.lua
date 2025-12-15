@@ -6,7 +6,8 @@ dap.configurations.go = {
     name = "Debug File",
     request = "launch",
     program = "${file}",
-    -- cwd = "${fileDir}",
+    cwd = "${workspaceFolder}",
+    -- cwd = "${fileDirname}",
   },
 }
 return {
