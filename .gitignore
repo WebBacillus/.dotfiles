@@ -2,3 +2,4 @@ nvim/lazy-lock.json
 yasb/yasb.log.*
 yasb/yasb.log
 ahk/*.exe
+fish/fish_variables
