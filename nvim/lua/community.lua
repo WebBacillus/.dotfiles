@@ -13,4 +13,6 @@ return {
   { import = "astrocommunity.pack.full-dadbod" },
   -- { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
   -- { import = "astrocommunity.workflow.hardtime-nvim" },
+  -- { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
+  { import = "astrocommunity.game.leetcode-nvim" },
 }

@@ -21,3 +21,17 @@ else if test "$os_name" = "Linux"
     # --- Windows/WSL/Linux Specific Paths ---
 end
 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /home/webbacillus/miniconda3/bin/conda
+    eval /home/webbacillus/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+else
+    if test -f "/home/webbacillus/miniconda3/etc/fish/conf.d/conda.fish"
+        . "/home/webbacillus/miniconda3/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH "/home/webbacillus/miniconda3/bin" $PATH
+    end
+end
+# <<< conda initialize <<<
+
