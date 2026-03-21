@@ -10,5 +10,7 @@ return {
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.completion.copilot-cmp" },
   { import = "astrocommunity.completion.avante-nvim" },
-  { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
+  { import = "astrocommunity.pack.full-dadbod" },
+  -- { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
+  -- { import = "astrocommunity.workflow.hardtime-nvim" },
 }
