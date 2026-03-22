@@ -35,3 +35,13 @@ else
 end
 # <<< conda initialize <<<
 
+# Initialize pyenv
+if type -q pyenv
+    pyenv init - | source
+end
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
