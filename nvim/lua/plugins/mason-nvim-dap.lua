@@ -28,29 +28,6 @@ end
 
 return {
   "jay-babu/mason-nvim-dap.nvim",
-  opts = {
-    ensure_installed = { "delve", "js-debug-adapter" },
-dap.configurations.python = {
-  {
-    type = "python",
-    request = "launch",
-    name = "Launch file",
-    program = "${file}",
-    pythonPath = function() return vim.fn.exepath "python" end,
-  },
-}
-dap.configurations.go = {
-  {
-    type = "delve",
-    name = "Debug File",
-    request = "launch",
-    program = "${file}",
-    cwd = "${workspaceFolder}",
-    -- cwd = "${fileDirname}",
-  },
-}
-return {
-  "jay-babu/mason-nvim-dap.nvim",
   opts = function(_, opts)
     opts.ensure_installed = vim.tbl_deep_extend("force", opts.ensure_installed, { "python-debugpy", "delve" })
     if not opts.handlers then opts.handlers = {} end
