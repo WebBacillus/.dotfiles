@@ -5,7 +5,10 @@ end
 bind --mode insert \cf forward-char
 
 zoxide init fish | source
+
+set -U FZF_DISABLE_KEYBINDINGS 1
 fzf --fish | source
+bind -M insert -e \ec
 
 set -gx EDITOR nvim
 set -gx VISUAL nvim
