@@ -1,0 +1,3 @@
+creation_rules:
+  - path_regex: .*\.enc\.json$
+    age: 'age1kfy6v7y5p8q7m2jqj2kpf7s4ex5xxefumjzj9em3v53lqa5da3aqe854eu'

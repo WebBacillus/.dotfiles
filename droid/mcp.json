@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "canva": {
+      "type": "http",
+      "url": "https://mcp.canva.com/mcp",
+      "disabled": false
+    },
+    "brave-search": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-brave-search"
+      ],
+      "disabled": false
+    },
+    "bubbletea-tui": {
+      "type": "http",
+      "url": "https://mcpmarket.com/tools/skills/bubbletea-tui-builder",
+      "disabled": false
+    }
+  }
+}
