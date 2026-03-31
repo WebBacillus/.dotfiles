@@ -1,0 +1,42 @@
+# Ctrl+N → Down Arrow, Ctrl+P → Up Arrow
+# For Hyprland with evremap
+
+# Built-in keyboard
+[[device]]
+name = "AT Translated Set 2 keyboard"
+[[device.remap]]
+modifier = ["Control_L"]
+key = "KEY_N"
+output = ["KEY_DOWN"]
+[[device.remap]]
+modifier = ["Control_R"]
+key = "KEY_N"
+output = ["KEY_DOWN"]
+[[device.remap]]
+modifier = ["Control_L"]
+key = "KEY_P"
+output = ["KEY_UP"]
+[[device.remap]]
+modifier = ["Control_R"]
+key = "KEY_P"
+output = ["KEY_UP"]
+
+# External keyboard
+[[device]]
+name = "RK61RGB-5.0 Keyboard"
+[[device.remap]]
+modifier = ["Control_L"]
+key = "KEY_N"
+output = ["KEY_DOWN"]
+[[device.remap]]
+modifier = ["Control_R"]
+key = "KEY_N"
+output = ["KEY_DOWN"]
+[[device.remap]]
+modifier = ["Control_L"]
+key = "KEY_P"
+output = ["KEY_UP"]
+[[device.remap]]
+modifier = ["Control_R"]
+key = "KEY_P"
+output = ["KEY_UP"]

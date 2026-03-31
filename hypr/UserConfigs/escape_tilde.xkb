@@ -1,0 +1,14 @@
+xkb_keymap {
+    xkb_keycodes "escape_tilde" {
+        minimum = 8;
+        maximum = 255;
+        <ESC> = 9;
+        <TLDE> = 49;
+    };
+    xkb_types "escape_tilde" { include "complete" };
+    xkb_compat "escape_tilde" { include "complete" };
+    xkb_symbols "escape_tilde" {
+        key <ESC> { [ grave, asciitilde ] };
+        key <TLDE> { [ Escape ] };
+    };
+};
