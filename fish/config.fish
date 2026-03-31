@@ -4,10 +4,16 @@ end
 
 bind --mode insert \cf forward-char
 
-zoxide init fish | source
+# zoxide (only if installed)
+if type -q zoxide
+    zoxide init fish | source
+end
 
 set -U FZF_DISABLE_KEYBINDINGS 1
-fzf --fish | source
+# fzf (only if installed)
+if type -q fzf
+    fzf --fish | source
+end
 bind -M insert -e \ec
 
 set -gx EDITOR nvim
@@ -27,18 +33,17 @@ end
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
+# Only initialize conda if it exists
 if test -f /home/webbacillus/miniconda3/bin/conda
     eval /home/webbacillus/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-else
-    if test -f "/home/webbacillus/miniconda3/etc/fish/conf.d/conda.fish"
-        . "/home/webbacillus/miniconda3/etc/fish/conf.d/conda.fish"
-    else
-        set -x PATH "/home/webbacillus/miniconda3/bin" $PATH
-    end
+else if test -f "/home/webbacillus/miniconda3/etc/fish/conf.d/conda.fish"
+    . "/home/webbacillus/miniconda3/etc/fish/conf.d/conda.fish"
+else if test -d "/home/webbacillus/miniconda3"
+    set -x PATH "/home/webbacillus/miniconda3/bin" $PATH
 end
 # <<< conda initialize <<<
 
-# Initialize pyenv
+# Initialize pyenv (only if installed)
 if type -q pyenv
     pyenv init - | source
 end
@@ -47,4 +52,7 @@ end
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
+# Linuxbrew (only if installed)
+if type -q /home/linuxbrew/.linuxbrew/bin/brew
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
+end
