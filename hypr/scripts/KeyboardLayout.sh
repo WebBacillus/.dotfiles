@@ -2,7 +2,6 @@
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # This is for changing kb_layouts. Set kb_layouts in "$HOME/.config/hypr/UserConfigs/UserSettings.conf"
 
-notif_icon="$HOME/.config/swaync/images/ja.png"
 SCRIPTSDIR="$HOME/.config/hypr/scripts"
 
 # Refined ignore list with patterns or specific device names
@@ -84,7 +83,6 @@ if ! get_current_layout_info; then
   echo "Could not get current layout information." >&2
   echo "There might not be any keyboards available, \
     or some were unnecessarily set as ignored." >&2
-  notify-send -u low -t 2000 'kb_layout' " Error:" " Layout change failed"
   echo "Exiting $0 $@" >&2
   exit 1
 fi
@@ -105,14 +103,10 @@ elif [[ "$1" == "switch" ]]; then
   new_variant="${variant_mapping[$next_index]}"
   echo "Next layout: $new_layout"
 
-  # Execute layout change and notify
+  # Execute layout change
   if ! change_layout; then
-    notify-send -u low -t 2000 'kb_layout' " Error:" " Layout change failed"
     echo "Layout change failed." >&2
     exit 1
-  else
-    notify-send -u low -i "$notif_icon" " kb_layout: $new_layout${new_variant:+($new_variant)}"
-    echo "Layout change notification sent."
   fi
 else
   echo "Usage: $0 {status|switch}"
