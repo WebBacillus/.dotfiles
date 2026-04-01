@@ -175,11 +175,10 @@
 },
 
 "hyprland/language": {
-	"format": "Lang: {}",
-	"format-en": "US",
-	"format-tr": "Korea",
-	"keyboard-name": "at-translated-set-2-keyboard",
-	"on-click": "hyprctl switchxkblayout $SET_KB next"
+    "format": "<span color='#f5c276'></span> {}",
+    "format-en": "US",
+    "format-th": "TH",
+    "keyboard-name": "keyd-virtual-keyboard"
 },
 
 "hyprland/submap": {

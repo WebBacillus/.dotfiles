@@ -1,112 +1,111 @@
 {
-	"layer": "top",
-	"modules-left": ["custom/launcher", "backlight", "wireplumber"],
-	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["network", "cpu", "memory", "battery", "clock"],
-	
+  "include": [
+    "$HOME/.config/waybar/Modules",
+    "$HOME/.config/waybar/ModulesWorkspaces",
+    "$HOME/.config/waybar/ModulesCustom",
+    "$HOME/.config/waybar/ModulesGroups",
+    "$HOME/.config/waybar/UserModules"
+  ],
+  "layer": "top",
+  "margin-top": 6,
+  "margin-left": 8,
+  "margin-right": 8,
+  "margin-bottom": 2,
+  "height": 34,
+  "modules-left": ["custom/launcher", "hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["network", "backlight", "cpu", "memory", "hyprland/language", "wireplumber", "battery", "custom/power"],
+  
   "wireplumber": {
     "tooltip": false,
     "scroll-step": 5,
-    "format": "{icon} {volume}%",
-    "format-muted": "󰝟 {volume}%",
-    "on-click":"kitty -- alsamixer -V all",
+    "format": "<span color='#89b4fa'>{icon}</span> {volume}%",
+    "format-muted": "<span color='#89b4fa'>󰝟</span> {volume}%",
+    "on-click": "kitty -- alsamixer -V all",
     "format-icons": {
       "default": ["", "", ""]
     }
   },
 
-
   "network": {
     "tooltip": false,
-    "format-wifi": "  {essid}",
-    "format-ethernet": "",
-    "on-click":"kitty -- nmtui",
-	},
+    "format-wifi": "<span color='#74c7ec'> </span> {essid}",
+    "format-ethernet": "<span color='#74c7ec'>󰈀</span>",
+    "format-disconnected": "<span color='#74c7ec'>󰤮</span>",
+    "on-click": "kitty -- nmtui"
+  },
 
-
-	"backlight": {
-		"tooltip": false,
-		"format": " {}%",
-		"interval":1,
-        "on-scroll-up": "light -A 5",
-		"on-scroll-down": "light -U 5"
-	},
-
+  "backlight": {
+    "tooltip": false,
+    "format": "<span color='#f9e2af'></span> {percent}%",
+    "interval": 1,
+    "on-scroll-up": "light -A 5",
+    "on-scroll-down": "light -U 5"
+  },
 
   "battery": {
-      "states": {
-          "full": 100,
-          "good": 95,
-          "decent": 50,
-          "warning": 30,
-          "critical": 20
-      },
-      "format": "{icon}  {capacity}%",
-      "format-time": "{H} h {M} min",
-      "format-alt": "{icon} {time}",
-      "format-icons": ["", "", "", "", ""]
+    "states": {
+      "full": 100,
+      "good": 95,
+      "decent": 50,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "<span color='#a6e3a1'>{icon}</span> {capacity}%",
+    "format-time": "{H} h {M} min",
+    "format-alt": "<span color='#a6e3a1'>{icon}</span> {time}",
+    "format-icons": ["", "", "", "", ""]
   },
-
 
   "clock": {
-      "format": "{:%H:%M}",
-      "format-alt": "{:%m-%d-%Y}"
+    "format": "<span color='#cba6f7'></span> {:%a, %d %b %H:%M:%S}",
+    "format-alt": "<span color='#cba6f7'></span> {:%d-%m-%y %H:%M:%S}",
+    "interval": 1
   },
-
 
   "cpu": {
-      "interval": 15,
-      "format": "  {}%",
-      "max-length": 10,
-      "on-click":"kitty -- btop"
+    "interval": 15,
+    "format": "<span color='#cba6f7'></span> {}%",
+    "max-length": 10,
+    "on-click": "kitty -- btop"
   },
-
 
   "memory": {
-      "interval": 30,
-      "format": "  {}%",
-      "max-length": 10
+    "interval": 30,
+    "format": "<span color='#a6c9f7'></span> {}%",
+    "max-length": 10
   },
-
 
   "custom/media": {
-      "interval": 30,
-      "format": "{icon} {}",
-      "return-type": "json",
-      "max-length": 20,
-      "format-icons": {
-          "spotify": " ",
-          "default": " "
-      },
-      "escape": true,
-      "exec": "$HOME/.config/system_scripts/mediaplayer.py 2> /dev/null",
-      "on-click": "playerctl play-pause"
+    "interval": 30,
+    "format": "<span color='#b4befe'>{icon}</span> {}",
+    "return-type": "json",
+    "max-length": 20,
+    "format-icons": {
+      "spotify": "",
+      "default": ""
+    },
+    "escape": true,
+    "exec": "$HOME/.config/system_scripts/mediaplayer.py 2> /dev/null",
+    "on-click": "playerctl play-pause"
   },
 
-
-  "custom/launcher":{
-      "format": " ",
-      "on-click": "sh ~/.config/rofi/launchers/type-2/launcher.sh",
-      "on-click-right": "killall rofi"
+  "custom/launcher": {
+    "format": "<span color='#89b4fa'> </span>",
+    "on-click": "sh ~/.config/rofi/launchers/type-2/launcher.sh",
+    "on-click-right": "killall rofi"
   },
-
 
   "hyprland/workspaces": {
     "format": "{icon}",
-    "on-click": "activate",
     "format-icons": {
-      "1": "壹",
-      "2": "貳",
-      "3": "參",
-      "4": "肆",
-      "5": "伍",
-      "6": "陸",
-      "7": "柒",
-      "8": "捌",
-      "9": "玖",
-      "10": "拾",
+      "default": "",
+      "empty": "",
+      "focused": "",
+      "active": ""
     },
-    "active": "",
-    "sort-by-number": true
-  },
+    "on-click": "activate",
+    "sort-by-number": true,
+    "disable-scroll": true
+  }
 }
