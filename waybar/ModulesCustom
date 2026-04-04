@@ -224,7 +224,7 @@
 	"tooltip": false
 },
 "custom/separator#blank": {
-	"format": "",
+	"format": " ",
 	"interval": "once",
 	"tooltip": false
 },
@@ -286,5 +286,6 @@
 "custom/arrow10": {
 	"format": "",
 	"tooltip": false
-}
+},
+
 }
