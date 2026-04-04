@@ -18,7 +18,8 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
         keyword decoration:rounding 0"
 	
 	hyprctl keyword "windowrule opacity 1 override 1 override 1 override, ^(.*)$"
-    swww kill 
+    swww kill
+    pkill -SIGUSR1 waybar
     notify-send -e -u low -i "$notif" " Gamemode:" " enabled"
     sleep 0.1
     exit
