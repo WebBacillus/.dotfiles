@@ -12,5 +12,6 @@ return {
   { import = "astrocommunity.ai.avante-nvim" },
   { import = "astrocommunity.pack.full-dadbod" },
   { import = "astrocommunity.game.leetcode-nvim" },
+  { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
   -- { import = "astrocommunity.workflow.hardtime-nvim" },
 }
