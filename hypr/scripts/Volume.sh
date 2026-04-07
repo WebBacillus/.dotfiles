@@ -60,7 +60,7 @@ inc_volume() {
     if [ "$(pamixer --get-mute)" == "true" ]; then
         toggle_mute
     else
-        pamixer -i "$1" --allow-boost --set-limit 150 && notify_user
+        pamixer -i "$1" --allow-boost --set-limit 100 && notify_user
     fi
 }
 
@@ -160,13 +160,13 @@ case "$1" in
   get_volume
   ;;
 "--inc")
-  inc_volume 5
+  inc_volume 2
   ;;
 "--inc-precise")
   inc_volume 1
   ;;
 "--dec")
-  dec_volume 5
+  dec_volume 2
   ;;
 "--dec-precise")
   dec_volume 1
