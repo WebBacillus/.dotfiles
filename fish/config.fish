@@ -18,6 +18,7 @@ bind -M insert -e \ec
 
 set -gx EDITOR nvim
 set -gx VISUAL nvim
+set -gx LANG en_US.UTF-8
 
 # Check the Operating System
 set -l os_name (uname)
@@ -56,3 +57,5 @@ set --export PATH $BUN_INSTALL/bin $PATH
 if type -q /home/linuxbrew/.linuxbrew/bin/brew
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
 end
+
+
