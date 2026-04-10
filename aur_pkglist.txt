@@ -1,0 +1,11 @@
+acer-wmi-battery-dkms-git
+claude-code
+factory-cli-bin
+gtk-engine-murrine
+gtk2
+obs-studio-git
+ttf-victor-mono
+wallust
+wlogout
+zen-browser-bin
+zoom
