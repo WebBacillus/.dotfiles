@@ -1,0 +1,5 @@
+vim.keymap.set("n", ";", ":")
+vim.keymap.set("n", "<C-w>%", vim.cmd.vsplit, { noremap = true, silent = true, desc = "Split window vertically" })
+vim.keymap.set("n", "<C-w>'", vim.cmd.split, { noremap = true, silent = true, desc = "Split window" })
+vim.keymap.set("n", "<C-w>v", "<nop>")
+vim.keymap.set("n", "<C-w>s", "<nop>")
