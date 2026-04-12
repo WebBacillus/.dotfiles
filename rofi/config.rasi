@@ -80,6 +80,11 @@ configuration {
 	display-combi: "Combi";
 	display-keys: "Keys";
 	display-filebrowser: "Files";
+	display-ssh: "";
+	display-run: "";
+	display-drun: "";
+	display-window: "";
+	display-combi: "";
 
 	/*---------- Misc setting ----------*/
 	terminal: "rofi-sensible-terminal";
@@ -102,6 +107,9 @@ configuration {
       action: "kb-cancel";
       delay:  0;
     }
+}
+
+@theme "~/.dotfiles/rofi/launchers/rofi-gruvbox-material/gruvbox-material.rasi"
 
 	/*---------- Keybindings ----------*/
 /*
@@ -178,4 +186,3 @@ configuration {
 	me-accept-entry: "MouseDPrimary";
 	me-accept-custom: "Control+MouseDPrimary";
 */
-}
