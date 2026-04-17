@@ -380,6 +380,7 @@
 	"format": "<span color='#89b4fa'>{icon}</span> {volume}%",
 	"format-muted": " Mute",
 	"on-click": "$HOME/.config/hypr/scripts/Volume.sh --toggle",
+	"on-click-right": "kitty --title btop sh -c 'wiremix'",
 	"on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --inc",
 	"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec",
 	"format-icons": [
