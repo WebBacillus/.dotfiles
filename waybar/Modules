@@ -98,8 +98,8 @@
 "clock": {
 	"interval": 1,
     //"format": " {:%I:%M %p}", // AM PM format
-    "format": " {:%H:%M:%S}", // 24H
-	"format-alt": " {:L%H:%M   %Y, %d %B, %A}",
+    "format": " {:L%H:%M   %Y, %d %B, %A}", // full details
+	"format-alt": " {:%H:%M:%S}", // HH:MM:SS only
 	"tooltip-format": "<tt><small>{calendar}</small></tt>",
 	"calendar": {
 		"mode": "year",
@@ -279,7 +279,7 @@
 	"format-icons": [
 		"󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
 	],
-	"on-click-right": "$HOME/.config/hypr/scripts/WaybarScripts.sh --nmtui"
+	"on-click": "kitty --title impala -e impala"
 },
 
 "network#speed": {
@@ -380,7 +380,7 @@
 	"format": "<span color='#89b4fa'>{icon}</span> {volume}%",
 	"format-muted": " Mute",
 	"on-click": "$HOME/.config/hypr/scripts/Volume.sh --toggle",
-	"on-click-right": "kitty --title btop sh -c 'wiremix'",
+	"on-click-right": "kitty --title wiremix sh -c 'wiremix'",
 	"on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --inc",
 	"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec",
 	"format-icons": [
