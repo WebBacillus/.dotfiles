@@ -58,4 +58,5 @@ if type -q /home/linuxbrew/.linuxbrew/bin/brew
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
 end
 
+set -gx XDG_DATA_DIRS $XDG_DATA_DIRS /var/lib/flatpak/exports/share /home/webbacillus/.local/share/flatpak/exports/share
 
