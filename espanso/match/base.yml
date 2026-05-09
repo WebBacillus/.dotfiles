@@ -1,0 +1,51 @@
+# espanso match file
+
+matches:
+  # --- PART 1: Static Snippets (Simple Hotstrings) ---
+  # Espanso's default behavior automatically matches AHK's ":*?" 
+  # (fires immediately without needing a trailing space, even inside words).
+  - trigger: ":email"
+    replace: "webbacillus@gmail.com"
+
+  - trigger: ":name"
+    replace: "Pasit Khumsena"
+
+  - trigger: ":tname"
+    replace: "พสิษฐ์ คำเสนา"
+
+  # --- PART 2: Snippet with Cursor Position ---
+  # Espanso uses $|$ to denote where the cursor should land after expansion.
+  - trigger: ":center"
+    replace: "<center>$|$</center>"
+
+  # --- PART 3: Dynamic Snippets (Date/Time & Shell) ---
+  
+  # 1. Print the current date (:today)
+  - trigger: ":today"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%d %b %Y, %A"
+
+  # 2. Print the current time (:now)
+  - trigger: ":now"
+    replace: "{{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%H:%M"
+
+  # 3. Generate 6 Cryptographically Secure Bytes, Copy to Clipboard, and Insert (:rand)
+  # Uses standard Linux tools (openssl) to generate the hex string.
+  # Pipes to wl-copy to copy it to the clipboard (native Wayland clipboard tool).
+  - trigger: ":rand"
+    replace: "{{rand_hex}}"
+    vars:
+      - name: rand_hex
+        type: shell
+        params:
+          cmd: "openssl rand -hex 6"
+          shell: bash
