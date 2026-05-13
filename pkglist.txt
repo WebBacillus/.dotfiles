@@ -1,4 +1,3 @@
-accountsservice
 adobe-source-code-pro-fonts
 alsa-firmware
 alsa-plugins
