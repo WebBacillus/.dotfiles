@@ -1,6 +1,4 @@
-7zip
 accountsservice
-acer-wmi-battery-dkms-git
 adobe-source-code-pro-fonts
 alsa-firmware
 alsa-plugins
@@ -18,13 +16,11 @@ bluez
 bluez-utils
 brightnessctl
 btop
-btrfs-assistant
 btrfs-progs
 cantarell-fonts
 cava
-chromium
-claude-code
 cliphist
+cmake
 cryptsetup
 device-mapper
 dialog
@@ -56,7 +52,6 @@ ethtool
 ex-vi-compat
 exfatprogs
 f2fs-tools
-factory-cli-bin
 fastfetch
 ffmpegthumbnailer
 firefox
@@ -64,7 +59,6 @@ firewall-applet
 firewalld
 fish
 git
-github-cli
 glances
 gnome-system-monitor
 grim
@@ -74,7 +68,6 @@ gst-plugin-pipewire
 gst-plugin-va
 gst-plugins-bad
 gst-plugins-ugly
-gtk-engine-murrine
 gvfs
 gvfs-mtp
 haveged
@@ -113,7 +106,6 @@ loupe
 lsb-release
 lsscsi
 lvm2
-ly
 man-db
 man-pages
 mdadm
@@ -126,7 +118,6 @@ mpv-mpris
 mtools
 nano
 nano-syntax-highlighting
-ncdu
 neovim
 netctl
 network-manager-applet
@@ -140,7 +131,6 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
-npm
 nss-mdns
 ntfs-3g
 ntp
@@ -150,8 +140,6 @@ nvidia-utils
 nvtop
 nwg-displays
 nwg-look
-obs-studio-git
-obsidian
 opencl-nvidia
 openssh
 os-prober
@@ -184,7 +172,6 @@ quickshell
 rebuild-detector
 reflector
 reflector-simple
-resvg
 rofi
 rsync
 rtkit
@@ -193,13 +180,10 @@ sddm
 sg3_utils
 slurp
 smartmontools
-snapper
 sof-firmware
-steam
 sudo
 swappy
 swaync
-symlinks
 sysfsutils
 systemd-sysvcompat
 texinfo
@@ -207,10 +191,7 @@ thunar
 thunar-archive-plugin
 thunar-volman
 tldr
-tlp
-tlp-rdw
 tmux
-trash-cli
 ttf-bitstream-vera
 ttf-dejavu
 ttf-droid
@@ -220,7 +201,6 @@ ttf-jetbrains-mono
 ttf-jetbrains-mono-nerd
 ttf-liberation
 ttf-opensans
-ttf-victor-mono
 tumbler
 umockdev
 unrar
@@ -229,7 +209,6 @@ upower
 usb_modeswitch
 usbutils
 vulkan-intel
-wallust
 waybar
 welcome
 wget
@@ -237,9 +216,7 @@ which
 whois
 wireless-regdb
 wireplumber
-wlogout
 xarchiver
-xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-user-dirs
 xdg-utils
@@ -256,6 +233,3 @@ xterm
 yay
 yazi
 yt-dlp
-zen-browser-bin
-zoom
-zoxide
