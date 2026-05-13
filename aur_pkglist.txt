@@ -1,5 +1,6 @@
 brave-bin
 gtk-engine-murrine
+safeeyes
 tailscale-git
 ttf-victor-mono
 wallust
