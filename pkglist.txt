@@ -232,3 +232,4 @@ xorg-xrandr
 xterm
 yay
 yazi
+yt-dlp
