@@ -4,8 +4,8 @@
 set -euo pipefail
 
 REPO_DIR="/home/webbacillus/.dotfiles"
-PKG_LIST="${REPO_DIR}/pkglist.txt"
-AUR_PKG_LIST="${REPO_DIR}/aur_pkglist.txt"
+PKG_LIST="${REPO_DIR}/pkg/pkglist.txt"
+AUR_PKG_LIST="${REPO_DIR}/pkg/aur_pkglist.txt"
 
 # Use safe temp files so we don't replace target files on failure
 TMP_PKG_LIST=$(mktemp)
