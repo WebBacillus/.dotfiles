@@ -24,14 +24,10 @@ trap 'rm -f "$TMP_PKG_LIST" "$TMP_AUR_PKG_LIST"' EXIT
 mv "$TMP_PKG_LIST" "$PKG_LIST"
 mv "$TMP_AUR_PKG_LIST" "$AUR_PKG_LIST"
 
-# Stage only the package-list files
-/usr/bin/git -C "$REPO_DIR" add "$PKG_LIST" "$AUR_PKG_LIST"
-
-# Check if there are staged changes before committing
-if /usr/bin/git -C "$REPO_DIR" diff --cached --quiet; then
-    # No changes, nothing to commit
-    exit 0
+# Check if package-list files changed against HEAD directly
+# This avoids picking up unrelated pre-staged files
+if ! /usr/bin/git -C "$REPO_DIR" diff --quiet HEAD -- "$PKG_LIST" "$AUR_PKG_LIST"; then
+    # Changes exist - use git commit -o to stage and commit only these files
+    # git commit -o bypasses the index and stages only the specified paths
+    /usr/bin/git -C "$REPO_DIR" commit -o "$PKG_LIST" "$AUR_PKG_LIST" -m "chore: update package lists"
 fi
-
-# Commit with the required message
-/usr/bin/git -C "$REPO_DIR" commit -m "chore: update package lists"
