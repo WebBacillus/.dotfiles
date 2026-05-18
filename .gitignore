@@ -3,3 +3,8 @@ yasb/yasb.log.*
 yasb/yasb.log
 ahk/*.exe
 fish/fish_variables
+nohup.out
+report.md
+some_untracked.txt
+staged_unrelated.txt
+unrelated_untracked.txt

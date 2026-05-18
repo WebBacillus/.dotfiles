@@ -1,9 +1,11 @@
+7zip
 accountsservice
 adobe-source-code-pro-fonts
 alsa-firmware
 alsa-plugins
 alsa-utils
 aspell
+audacity
 awww
 b43-fwcutter
 base
@@ -19,6 +21,7 @@ btop
 btrfs-progs
 cantarell-fonts
 cava
+chromium
 cliphist
 cmake
 cryptsetup
@@ -59,8 +62,11 @@ firewall-applet
 firewalld
 fish
 git
+github-cli
 glances
+glu
 gnome-system-monitor
+gparted
 grim
 grub
 gst-libav
@@ -78,6 +84,7 @@ hypridle
 hyprland
 hyprlock
 hyprpolkitagent
+impala
 inetutils
 intel-media-driver
 intel-ucode
@@ -110,6 +117,7 @@ lvm2
 man-db
 man-pages
 mdadm
+mediainfo
 meld
 mesa-utils
 modemmanager
@@ -132,6 +140,7 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
+npm
 nss-mdns
 ntfs-3g
 ntp
@@ -141,6 +150,7 @@ nvidia-utils
 nvtop
 nwg-displays
 nwg-look
+obsidian
 opencl-nvidia
 openssh
 os-prober
@@ -161,6 +171,7 @@ python
 python-defusedxml
 python-jinja
 python-packaging
+python-pip
 python-pyquery
 python-requests
 qalculate-gtk
@@ -173,12 +184,14 @@ quickshell
 rebuild-detector
 reflector
 reflector-simple
+resvg
 rofi
 rsync
 rtkit
 s-nail
 sddm
 sg3_utils
+shotcut
 slurp
 smartmontools
 sof-firmware
@@ -192,6 +205,7 @@ texinfo
 thunar
 thunar-archive-plugin
 thunar-volman
+tk
 tldr
 tmux
 ttf-bitstream-vera
@@ -210,13 +224,16 @@ unzip
 upower
 usb_modeswitch
 usbutils
+vivaldi
 vulkan-intel
 waybar
 welcome
 wget
 which
 whois
+wine
 wireless-regdb
+wiremix
 wireplumber
 xarchiver
 xdg-desktop-portal-hyprland
@@ -227,6 +244,7 @@ xfsprogs
 xl2tpd
 xorg-server
 xorg-xdpyinfo
+xorg-xhost
 xorg-xinit
 xorg-xinput
 xorg-xkill
@@ -235,3 +253,4 @@ xterm
 yay
 yazi
 yt-dlp
+zoxide

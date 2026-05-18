@@ -1,7 +1,13 @@
+anydesk-bin
 brave-bin
 gtk-engine-murrine
+obs-studio-git
+protonup-qt
+python311
+r-quick-share
 safeeyes
 tailscale-git
+tor-browser-bin
 ttf-victor-mono
 wallust
 wlogout
