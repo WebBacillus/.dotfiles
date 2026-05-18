@@ -34,7 +34,7 @@ edit = [
 	{ run = "%EDITOR% %*",  block = true, for = "windows" },
 ]
 
-play = [
-	{ run = 'mpv "$@"', orphan = true, for = "unix" },
-]
+# play = [
+# 	{ run = 'mpv "$@"', orphan = true, for = "unix" },
+# ]
 

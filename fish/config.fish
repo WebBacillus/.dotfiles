@@ -53,10 +53,11 @@ end
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
+# awww (swww fork) aliases
+alias swww-daemon='awww-daemon'
+alias swww='awww'
+
 # Linuxbrew (only if installed)
 if type -q /home/linuxbrew/.linuxbrew/bin/brew
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
 end
-
-set -gx XDG_DATA_DIRS $XDG_DATA_DIRS /var/lib/flatpak/exports/share /home/webbacillus/.local/share/flatpak/exports/share
-

@@ -7,5 +7,8 @@ return {
   },
   opts = {
     lang = "python3",
+    storage = {
+      home = vim.fn.expand "~/20_areas/LeetCode",
+    },
   },
 }

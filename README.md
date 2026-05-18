@@ -1,26 +1,37 @@
-Gruvbox: Color
+# Dotfiles
+
+Personal system configuration for Hyprland (Wayland), Neovim, Waybar, and other tools on EndeavourOS.
+
+## Structure
+
 ```
-{
-    "background": "#282828",
-    "black": "#282828",
-    "blue": "#458588",
-    "brightBlack": "#928374",
-    "brightBlue": "#83A598",
-    "brightCyan": "#8EC07C",
-    "brightGreen": "#B8BB26",
-    "brightPurple": "#D3869B",
-    "brightRed": "#FB4934",
-    "brightWhite": "#EBDBB2",
-    "brightYellow": "#FABD2F",
-    "cursorColor": "#FFFFFF",
-    "cyan": "#689D6A",
-    "foreground": "#EBDBB2",
-    "green": "#98971A",
-    "name": "Gruvbox Dark",
-    "purple": "#B16286",
-    "red": "#CC241D",
-    "selectionBackground": "#FFFFFF",
-    "white": "#A89984",
-    "yellow": "#D79921"
-}
+├── hypr/          # Hyprland compositor config + scripts
+├── waybar/        # Status bar configs and styles
+├── astronvim_v6/  # Neovim (AstroNvim) configuration
+├── kitty/         # Terminal emulator
+├── fish/          # Shell configuration
+├── rofi/          # Application launcher
+├── tmux/          # Terminal multiplexer
+├── droid/         # Factory AI Droid settings (MCP, encrypted)
+├── custom_script/ # Utility scripts and cron jobs
+└── ...            # Other tool configs (btop, yazi, kanshi, etc.)
 ```
+
+## Package List Backup
+
+A daily cron job backs up installed packages and auto-commits changes:
+
+- `pkglist.txt` — explicitly installed native pacman packages
+- `aur_pkglist.txt` — explicitly installed AUR/foreign packages
+
+**Script:** `custom_script/package-list-backup.sh`
+**Cron snippet:** `custom_script/package-list-backup.cron` (daily at 2am)
+**To install the cron job:** copy the cron snippet into your crontab (`crontab custom_script/package-list-backup.cron`)
+
+## Setup
+
+```bash
+git clone https://github.com/webbacillus/.dotfiles ~/.dotfiles
+# Then symlink individual config directories to ~/.config/ as needed
+```
+
