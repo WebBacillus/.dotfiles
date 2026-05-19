@@ -1,5 +1,6 @@
 anydesk-bin
 brave-bin
+gromit-mpx
 gtk-engine-murrine
 obs-studio-git
 protonup-qt
@@ -11,3 +12,4 @@ tor-browser-bin
 ttf-victor-mono
 wallust
 wlogout
+zathura-git

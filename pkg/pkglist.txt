@@ -19,11 +19,13 @@ bluez-utils
 brightnessctl
 btop
 btrfs-progs
+bun
 cantarell-fonts
 cava
 chromium
 cliphist
 cmake
+cronie
 cryptsetup
 device-mapper
 dialog
@@ -253,4 +255,5 @@ xterm
 yay
 yazi
 yt-dlp
+zathura-pdf-mupdf
 zoxide
