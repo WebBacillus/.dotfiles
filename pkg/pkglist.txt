@@ -4,6 +4,7 @@ adobe-source-code-pro-fonts
 alsa-firmware
 alsa-plugins
 alsa-utils
+arp-scan
 aspell
 audacity
 awww
@@ -34,6 +35,8 @@ discord
 dmidecode
 dmraid
 dnsmasq
+docker
+docx2txt
 dosfstools
 downgrade
 dracut
@@ -68,6 +71,8 @@ github-cli
 glances
 glu
 gnome-system-monitor
+go
+go-ethereum
 gparted
 grim
 grub
@@ -137,6 +142,7 @@ networkmanager-openconnect
 networkmanager-openvpn
 nfs-utils
 nilfs-utils
+nmap
 nodejs
 noto-fonts
 noto-fonts-cjk
