@@ -134,6 +134,7 @@ mpv-mpris
 mtools
 nano
 nano-syntax-highlighting
+ncdu
 neovim
 netctl
 network-manager-applet
@@ -167,6 +168,7 @@ pacman-contrib
 pamixer
 pavucontrol
 perl
+pika-backup
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
@@ -198,6 +200,7 @@ rofi
 rsync
 rtkit
 s-nail
+sbctl
 sddm
 sg3_utils
 shotcut
@@ -214,6 +217,7 @@ texinfo
 thunar
 thunar-archive-plugin
 thunar-volman
+timeshift
 tk
 tldr
 tmux
