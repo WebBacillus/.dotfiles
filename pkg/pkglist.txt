@@ -25,6 +25,7 @@ cantarell-fonts
 cava
 chromium
 cliphist
+cloudflared
 cmake
 cronie
 cryptsetup
@@ -103,6 +104,7 @@ jq
 keyd
 kitty
 kvantum
+lazydocker
 lazygit
 less
 libdvdcss
@@ -156,6 +158,7 @@ ntp
 nvidia-open
 nvidia-settings
 nvidia-utils
+nvm
 nvtop
 nwg-displays
 nwg-look

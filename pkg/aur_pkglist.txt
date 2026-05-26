@@ -1,5 +1,6 @@
 anydesk-bin
 brave-bin
+docker-compose-bin
 gromit-mpx
 gtk-engine-murrine
 obs-studio-git
