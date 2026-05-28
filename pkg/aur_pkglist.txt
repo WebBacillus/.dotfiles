@@ -1,12 +1,16 @@
 anydesk-bin
 brave-bin
+cli-proxy-api-bin
+defuddle
 docker-compose-bin
 gromit-mpx
 gtk-engine-murrine
+ngrok
 obs-studio-git
 protonup-qt
 python311
 r-quick-share
+resterm-bin
 safeeyes
 tailscale-git
 tor-browser-bin
