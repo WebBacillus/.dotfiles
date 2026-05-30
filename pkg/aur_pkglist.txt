@@ -1,5 +1,6 @@
 anydesk-bin
 brave-bin
+bruno-bin
 cli-proxy-api-bin
 defuddle
 docker-compose-bin
@@ -17,4 +18,5 @@ tor-browser-bin
 ttf-victor-mono
 wallust
 wlogout
+yadmm
 zathura-git
