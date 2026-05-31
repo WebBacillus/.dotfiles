@@ -6,8 +6,10 @@ defuddle
 docker-compose-bin
 gromit-mpx
 gtk-engine-murrine
+microsoft-edge-stable-bin
 ngrok
 obs-studio-git
+playwright
 protonup-qt
 python311
 r-quick-share
