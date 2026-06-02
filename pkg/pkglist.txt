@@ -29,6 +29,7 @@ cloudflared
 cmake
 cronie
 cryptsetup
+cuda
 dbeaver
 device-mapper
 dialog
@@ -188,6 +189,7 @@ python-defusedxml
 python-jinja
 python-packaging
 python-pip
+python-pipx
 python-pyquery
 python-requests
 qalculate-gtk

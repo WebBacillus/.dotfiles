@@ -6,6 +6,7 @@ defuddle
 docker-compose-bin
 gromit-mpx
 gtk-engine-murrine
+hyprwhspr
 microsoft-edge-stable-bin
 ngrok
 obs-studio-git
