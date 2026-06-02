@@ -1,66 +1,34 @@
 # Dotfiles Repository
 
-Personal system configuration for Hyprland (Wayland), waybar, Neovim, and other tools.
+Personal dotfiles for EndeavourOS/Hyprland. Most top-level directories are intended to be symlinked into `~/.config` or a tool-specific home directory, not built as one app.
 
-## Repository Structure
+## Active Paths
 
-Organized by tool/application. Each directory contains configurations meant to be symlinked to their target locations (`~/.config/`, `~`, etc.).
+- `~/.config/hypr` currently resolves to this repo's `hypr/`; editing `hypr/*` affects the live Hyprland config.
+- `waybar/config` and `waybar/style.css` are symlinks to the active preset; currently `configs/[TOP] Default Laptop` and `style/[Light] Obsidian Glow.css`.
+- Neovim config lives in `astronvim_v6/` (`init.lua`, `lua/lazy_setup.lua`, `lua/plugins/`); `astronvim_v5/` is an older template, and there is no root `nvim/` directory.
 
-```
-├── hypr/          # Hyprland compositor config + extensive scripts
-├── waybar/        # Status bar (configs/, style/, Modules*/)
-├── nvim/          # AstroNvim configuration
-├── kitty/         # Terminal emulator
-├── rofi/          # Application launcher
-├── yazi/          # File manager + plugins
-├── btop/          # System monitor
-├── fish/          # Shell
-├── tmux/          # Terminal multiplexer
-├── droid/         # Factory AI Droid settings (MCP servers, encrypted settings)
-├── yasb/          # Status bar
-├── ahk/           # AutoHotkey (Windows)
-├── vivaldi/       # Browser
-├── komorebic/     # Window manager (Windows)
-└── powershell/    # PowerShell profile
-```
+## Hyprland
 
-## Common Commands
+- `hypr/hyprland.conf` sources vendor defaults from `hypr/configs/` first, then user overrides from `hypr/UserConfigs/`; prefer `UserConfigs/` for local behavior changes unless updating shared defaults intentionally.
+- This install is Hyprland `0.55.x`, while these files are still hyprlang `.conf`. Validate with `hyprctl reload` and then `hyprctl configerrors`.
+- Window rules use the newer field syntax already present in `configs/WindowRules.conf`: `windowrule = match:class ^(foo)$, float on`. Do not copy old `windowrule = float, class:^(foo)$` or pre-0.53 rules from `configs/WindowRules-pre-53.conf` into active files.
+- Current boolean effect names include `no_blur` and `no_anim`, not old `noblur`/`noanim`.
+- Monitor profiles are selected by the Rofi profile flow and overwrite `~/.config/hypr/monitors.conf`, backing up the previous file as `Previous_Profile.conf`.
 
-```bash
-# Pull latest changes
-git pull origin master
+## Waybar
 
-# View changes
-git status
-git diff
+- Presets are split across `waybar/configs/`, `waybar/style/`, and module files (`Modules*`, `UserModules`). If changing the active bar, patch the symlink target or update the symlink deliberately.
+- Many preset filenames contain spaces and brackets; quote paths in shell commands.
 
-# Commit changes
-git add <files>
-git commit -m "message"
+## Secrets
 
-# Decrypt encrypted settings (droid/)
-./droid/decrypt_settings.sh
-```
+- Encrypted JSON is managed with `sops` + age. Do not commit decrypted outputs.
+- `droid/decrypt_settings.sh [-k keyfile]` decrypts `droid/settings.enc.json` to `~/.factory/settings.json`.
+- `claude/decrypt_settings.sh [-k keyfile]` decrypts `claude/settings.enc.json` and `claude/.credentials.enc.json` to `~/.claude/`.
+- Both decrypt scripts default to `~/.config/sops/age/keys.txt`.
 
-## Key Details
+## Generated Files
 
-### Encrypted Files
-Some files are encrypted with sops + age. The `.sops.yaml` rule encrypts `*.enc.json` files. Use `droid/decrypt_settings.sh` to decrypt.
-
-### Hyprland Scripts
-The `hypr/scripts/` directory contains 50+ shell scripts for window management, themes, brightness, media, screenshots, and more. Many are called via keybinds defined in `hyprland.conf`.
-
-### Waybar Modularity
-- `waybar/configs/` - Multiple config presets (e.g., "[TOP] Default Laptop")
-- `waybar/style/` - Theme variants (e.g., "[Light] Obsidian Glow.css")
-- `waybar/Modules*.lua` - Custom module definitions
-- Active config/style symlinked as `config` and `style.css`
-
-### Droid Configuration
-- `droid/config.json` - Custom AI models for Droid
-- `droid/mcp.json` - MCP server definitions
-- `droid/settings.enc.json` - Encrypted user settings
-
-### Language Preferences (from user memories)
-- Go: Clean Architecture with mockery for mocks
-- Python: FastAPI + pytest, use `uv` for package management
+- `custom_script/package-list-backup.sh` regenerates `pkg/pkglist.txt` and `pkg/aur_pkglist.txt` with `pacman -Qqen`/`pacman -Qqem`, then commits only those files with message `chore: update package lists` when changed.
+- The package-list cron is `custom_script/package-list-backup.cron` and runs daily at 02:00.

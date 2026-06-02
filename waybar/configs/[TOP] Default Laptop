@@ -14,5 +14,5 @@
   "height": 34,
   "modules-left": ["custom/menu", "hyprland/workspaces#numbers"],
   "modules-center": ["clock"],
-  "modules-right": ["network", "backlight", "cpu", "memory", "hyprland/language", "wireplumber", "battery", "custom/power"]
+  "modules-right": ["network", "backlight", "hyprland/language", "tray", "wireplumber", "battery", "custom/power"]
 }
