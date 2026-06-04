@@ -1,30 +1,19 @@
 #!/usr/bin/env bash
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # Wallust: derive colors from the current wallpaper and update templates
-# Usage: WallustSwww.sh [absolute_path_to_wallpaper]
+# Usage: WallustAwww.sh [absolute_path_to_wallpaper]
 
 set -euo pipefail
 
 # Inputs and paths
 passed_path="${1:-}"
-cache_dir="$HOME/.cache/swww/"
 rofi_link="$HOME/.config/rofi/.current_wallpaper"
 wallpaper_current="$HOME/.config/hypr/wallpaper_effects/.wallpaper_current"
-read_cached_wallpaper() {
-  local cache_file="$1"
-  if [[ -f "$cache_file" ]]; then
-    awk 'NF && $0 !~ /^filter/ {print; exit}' "$cache_file"
-  fi
-}
 
 read_wallpaper_from_query() {
   local monitor="$1"
-  swww query | awk -v mon="$monitor" '
-    /^Monitor/ {
-      cur=$2
-      gsub(":", "", cur)
-    }
-    /image:/ && cur==mon {
+  awww query | awk -v mon="$monitor" '
+    $2 == mon ":" && /image:/ {
       sub(/^.*image: /,"")
       print
       exit
@@ -46,26 +35,8 @@ wallpaper_path=""
 if [[ -n "$passed_path" && -f "$passed_path" ]]; then
   wallpaper_path="$passed_path"
 else
-  # Try to read from swww cache for the focused monitor, with a short retry loop
   current_monitor="$(get_focused_monitor)"
-  cache_file="$cache_dir$current_monitor"
-
-  # Wait briefly for swww to write its cache after an image change
-  for i in {1..10}; do
-    if [[ -f "$cache_file" ]]; then
-      break
-    fi
-    sleep 0.1
-  done
-
-  if [[ -f "$cache_file" ]]; then
-    # The first non-filter line is the original wallpaper path
-    wallpaper_path="$(read_cached_wallpaper "$cache_file")"
-  fi
-
-  if [[ -z "$wallpaper_path" ]]; then
-    wallpaper_path="$(read_wallpaper_from_query "$current_monitor")"
-  fi
+  wallpaper_path="$(read_wallpaper_from_query "$current_monitor")"
 fi
 
 if [[ -z "${wallpaper_path:-}" || ! -f "$wallpaper_path" ]]; then
