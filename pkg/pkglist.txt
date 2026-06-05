@@ -69,6 +69,7 @@ firefox
 firewall-applet
 firewalld
 fish
+gimp
 git
 github-cli
 glances
