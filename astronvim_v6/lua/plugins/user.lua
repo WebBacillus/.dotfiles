@@ -1,9 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
--- You can also add or configure plugins by creating files in this `plugins/` folder
--- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
--- Here are some examples:
-
 ---@type LazySpec
 return {
 
@@ -85,6 +79,25 @@ return {
         -- disable for .vim files, but it work for another filetypes
         Rule("a", "a", "-vim")
       )
+    end,
+  },
+
+  -- Override copilot.lua to stop LSP on VimExit to prevent memory leaks
+  {
+    "zbirenbaum/copilot.lua",
+    opts = {
+      suggestion = { auto_trigger = false, debounce = 150 },
+      panel = { enabled = false },
+      server = { type = "nodejs" },
+    },
+    config = function(_, opts)
+      require("copilot").setup(opts)
+      -- Stop copilot LSP when vim exits to prevent orphaned node processes
+      vim.api.nvim_create_autocmd("VimLeavePre", {
+        callback = function()
+          pcall(require("copilot").stop)
+        end,
+      })
     end,
   },
 }

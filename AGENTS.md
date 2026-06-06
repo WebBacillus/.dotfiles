@@ -8,6 +8,10 @@ Personal dotfiles for EndeavourOS/Hyprland. Most top-level directories are inten
 - `waybar/config` and `waybar/style.css` are symlinks to the active preset; currently `configs/[TOP] Default Laptop` and `style/[Light] Obsidian Glow.css`.
 - Neovim config lives in `astronvim_v6/` (`init.lua`, `lua/lazy_setup.lua`, `lua/plugins/`); `astronvim_v5/` is an older template, and there is no root `nvim/` directory.
 
+## Shell
+
+- Login shell is **fish**; auto-start logic lives in `~/.config/fish/config.fish`, not `.profile`.
+
 ## Hyprland
 
 - `hypr/hyprland.conf` sources vendor defaults from `hypr/configs/` first, then user overrides from `hypr/UserConfigs/`; prefer `UserConfigs/` for local behavior changes unless updating shared defaults intentionally.
