@@ -1,5 +1,4 @@
 anydesk-bin
-brave-bin
 bruno-bin
 cli-proxy-api-bin
 defuddle
@@ -9,17 +8,11 @@ gtk-engine-murrine
 hyprwhspr
 microsoft-edge-stable-bin
 ngrok
-obs-studio-git
 playwright
-protonup-qt
-python311
-r-quick-share
 resterm-bin
 safeeyes
-tailscale-git
 tor-browser-bin
 ttf-victor-mono
 wallust
-wlogout
 yadmm
 zathura-git
