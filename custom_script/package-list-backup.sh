@@ -29,5 +29,5 @@ mv "$TMP_AUR_PKG_LIST" "$AUR_PKG_LIST"
 if ! /usr/bin/git -C "$REPO_DIR" diff --quiet HEAD -- "$PKG_LIST" "$AUR_PKG_LIST"; then
     # Changes exist - use git commit -o to stage and commit only these files
     # git commit -o bypasses the index and stages only the specified paths
-    /usr/bin/git -C "$REPO_DIR" commit -o "$PKG_LIST" "$AUR_PKG_LIST" -m "chore: update package lists"
+    /usr/bin/git -C "$REPO_DIR" commit -o "$PKG_LIST" "$AUR_PKG_LIST" -m "update package lists"
 fi
