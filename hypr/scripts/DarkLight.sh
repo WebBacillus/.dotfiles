@@ -32,7 +32,10 @@ done
 
 
 # Initialize awww if needed
-awww query || awww-daemon --format rgb
+if ! awww query > /dev/null 2>&1; then
+    awww-daemon &
+    sleep 1
+fi
 
 # Set awww options
 awww="awww img"

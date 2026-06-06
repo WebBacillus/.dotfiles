@@ -20,11 +20,13 @@ BEZIER=".43,1.19,1,.4"
 AWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION --transition-bezier $BEZIER"
 
 
-awww query || awww-daemon --format rgb && awww img -o $focused_monitor ${RANDOMPICS} $AWWW_PARAMS
+if ! awww query > /dev/null 2>&1; then
+	awww-daemon &
+	sleep 1
+fi
 
-wait $!
-"$SCRIPTSDIR/WallustAwww.sh" &&
+awww img -o "$focused_monitor" "${RANDOMPICS}" $AWWW_PARAMS
 
-wait $!
+"$SCRIPTSDIR/WallustAwww.sh"
 sleep 2
 "$SCRIPTSDIR/Refresh.sh"

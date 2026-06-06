@@ -133,7 +133,8 @@ apply_image_wallpaper() {
 
   if ! pgrep -x "awww-daemon" >/dev/null; then
     echo "Starting awww-daemon..."
-    awww-daemon --format rgb &
+    awww-daemon &
+    sleep 1
   fi
 
   awww img -o "$focused_monitor" "$image_path" $AWWW_PARAMS

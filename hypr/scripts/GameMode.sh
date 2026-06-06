@@ -24,7 +24,11 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
     sleep 0.1
     exit
 else
-	awww-daemon --format rgb && awww img "$HOME/.config/rofi/.current_wallpaper" &
+	if ! awww query > /dev/null 2>&1; then
+		awww-daemon &
+		sleep 1
+	fi
+	awww img "$HOME/.config/rofi/.current_wallpaper" &
 	sleep 0.1
 	${SCRIPTSDIR}/WallustAwww.sh
 	sleep 0.5
