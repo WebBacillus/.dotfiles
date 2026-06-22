@@ -1,0 +1,43 @@
+{
+  "plugin": ["oh-my-openagent@latest"],
+  "$schema": "https://opencode.ai/config.json",
+  "lsp": true,
+  "mcp": {
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "@playwright/mcp@latest"
+      ],
+      "enabled": true
+    }
+  },
+  "agent": {
+    "build": {
+      "mode": "primary",
+      "model": "openai/gpt-5.5",
+      // "prompt": "{file:./prompts/build.txt}",
+      "permission": {
+        "edit": "allow",
+        "bash": "allow"
+      }
+    },
+    "plan": {
+      "mode": "primary",
+      "model": "openai/gpt-5.5",
+      "permission": {
+        "edit": "deny",
+        "bash": "deny"
+      }
+    },
+    "code-reviewer": {
+      "description": "Reviews code for best practices and potential issues",
+      "mode": "subagent",
+      "model": "openai/gpt-5.5",
+      "prompt": "You are a code reviewer. Focus on security, performance, and maintainability.",
+      "permission": {
+        "edit": "deny"
+      }
+    }
+  }
+}
