@@ -101,6 +101,7 @@ gvfs
 gvfs-mtp
 haveged
 hdparm
+heroic-games-launcher-bin
 hwdetect
 hwinfo
 hypridle
