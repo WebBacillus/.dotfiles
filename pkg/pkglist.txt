@@ -81,6 +81,7 @@ ffmpegthumbnailer
 firefox
 firewall-applet
 firewalld
+flatpak
 fsarchiver
 garcon
 gimp
