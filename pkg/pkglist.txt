@@ -253,6 +253,7 @@ swaync
 switcheroo-control
 sysfsutils
 tailscale
+tcpdump
 texinfo
 thunar
 thunar-archive-plugin

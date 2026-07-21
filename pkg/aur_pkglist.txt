@@ -3,8 +3,10 @@ bruno-bin
 cli-proxy-api-bin
 defuddle
 docker-compose-bin
+doom_ascii
 gromit-mpx
 gtk-engine-murrine
+gzdoom
 hyprwhspr
 microsoft-edge-stable-bin
 ngrok
