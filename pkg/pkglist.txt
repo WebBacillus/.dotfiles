@@ -245,6 +245,7 @@ shotcut
 slurp
 smartmontools
 sof-firmware
+solaar
 sops
 steam
 sudo
