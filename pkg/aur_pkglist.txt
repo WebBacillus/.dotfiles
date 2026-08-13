@@ -13,6 +13,7 @@ ngrok
 playwright
 resterm-bin
 safeeyes
+sherlock
 tor-browser-bin
 ttf-victor-mono
 wallust
