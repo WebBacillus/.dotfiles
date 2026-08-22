@@ -27,19 +27,19 @@ if [[ -z "$touchpad_device" ]]; then
     exit 1
 fi
 
-touchpad_keyword="${TOUCHPAD_KEYWORD:-device:${touchpad_device}:enabled}"
 status_file="${XDG_RUNTIME_DIR:-/tmp}/touchpad.status"
+device_lua=$(printf '%s' "$touchpad_device" | jq -Rs .)
 
 enable_touchpad() {
     printf "true" >"$status_file"
     notify-send -u low -i "$notif" " Enabling" " touchpad"
-    hyprctl keyword "$touchpad_keyword" true -r
+    hyprctl eval "hl.device({ name = $device_lua, enabled = true })"
 }
 
 disable_touchpad() {
     printf "false" >"$status_file"
     notify-send -u low -i "$notif" " Disabling" " touchpad"
-    hyprctl keyword "$touchpad_keyword" false -r
+    hyprctl eval "hl.device({ name = $device_lua, enabled = false })"
 }
 
 current_state="false"

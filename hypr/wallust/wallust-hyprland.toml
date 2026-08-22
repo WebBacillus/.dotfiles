@@ -1,0 +1,4 @@
+# Merge this block into ~/.config/wallust/wallust.toml.
+[templates]
+hyprlua.template = 'colors-hyprland.lua'
+hyprlua.target = '~/.config/hypr/wallust/wallust-hyprland.lua'

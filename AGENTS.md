@@ -14,11 +14,12 @@ Personal dotfiles for EndeavourOS/Hyprland. Most top-level directories are inten
 
 ## Hyprland
 
-- `hypr/hyprland.conf` sources vendor defaults from `hypr/configs/` first, then user overrides from `hypr/UserConfigs/`; prefer `UserConfigs/` for local behavior changes unless updating shared defaults intentionally.
-- This install is Hyprland `0.55.x`, while these files are still hyprlang `.conf`. Validate with `hyprctl reload` and then `hyprctl configerrors`.
+- `hypr/hyprland.lua` is the Hyprland 0.56+ entrypoint. It loads vendor defaults from `hypr/configs/*.lua` first, then user overrides from `hypr/UserConfigs/*.lua`; prefer `UserConfigs/` for local behavior changes unless updating shared defaults intentionally.
+- Legacy `hypr/hyprland.conf` and its sourced `.conf` files remain as a temporary rollback path. See `hypr/README-LUA.md` for activation and rollback.
+- Validate Lua changes with `bash custom_script/check-hyprland-lua.sh`; it runs `luac -p` and `Hyprland --verify-config` without reloading the live compositor.
 - Window rules use the newer field syntax already present in `configs/WindowRules.conf`: `windowrule = match:class ^(foo)$, float on`. Do not copy old `windowrule = float, class:^(foo)$` or pre-0.53 rules from `configs/WindowRules-pre-53.conf` into active files.
 - Current boolean effect names include `no_blur` and `no_anim`, not old `noblur`/`noanim`.
-- Monitor profiles are selected by the Rofi profile flow and overwrite `~/.config/hypr/monitors.conf`, backing up the previous file as `Previous_Profile.conf`.
+- Monitor profiles are selected by the Rofi profile flow and overwrite `~/.config/hypr/monitors.lua`. nwg-displays also owns generated `monitors.lua`; do not edit it manually.
 
 ## Waybar
 
@@ -36,3 +37,17 @@ Personal dotfiles for EndeavourOS/Hyprland. Most top-level directories are inten
 
 - `custom_script/package-list-backup.sh` regenerates `pkg/pkglist.txt` and `pkg/aur_pkglist.txt` with `pacman -Qqen`/`pacman -Qqem`, then commits only those files with message `chore: update package lists` when changed.
 - The package-list cron is `custom_script/package-list-backup.cron` and runs daily at 02:00.
+
+## Agent skills
+
+### Issue tracker
+
+Issues are tracked in GitHub Issues for `webbacillus/.dotfiles`. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Use the canonical labels `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, and `wontfix`. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+This repository uses a single-context domain layout. See `docs/agents/domain.md`.
