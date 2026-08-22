@@ -15,3 +15,6 @@ prefix = "ctrl+b"
 
 [ui.sound]
 enabled = false
+
+[experimental]
+pane_history = false
