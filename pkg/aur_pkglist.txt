@@ -4,6 +4,7 @@ cli-proxy-api-bin
 defuddle
 docker-compose-bin
 doom_ascii
+gau
 gromit-mpx
 gtk-engine-murrine
 gzdoom
