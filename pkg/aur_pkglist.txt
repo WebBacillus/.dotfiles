@@ -1,5 +1,6 @@
 anydesk-bin
 bruno-bin
+chatgpt-desktop
 cli-proxy-api-bin
 defuddle
 docker-compose-bin
@@ -9,6 +10,7 @@ gromit-mpx
 gtk-engine-murrine
 gzdoom
 hyprwhspr
+mateengine
 microsoft-edge-stable-bin
 ngrok
 playwright
