@@ -21,4 +21,3 @@ tor-browser-bin
 ttf-victor-mono
 wallust
 yadmm
-zathura-git

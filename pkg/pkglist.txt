@@ -185,7 +185,6 @@ npm
 nss-mdns
 ntfs-3g
 ntp
-nvidia-open
 nvidia-prime
 nvidia-settings
 nvidia-utils
@@ -353,5 +352,6 @@ yad
 yay
 yazi
 yt-dlp
+zathura
 zathura-pdf-mupdf
 zoxide
