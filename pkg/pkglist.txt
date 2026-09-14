@@ -192,6 +192,7 @@ nvm
 nvtop
 nwg-displays
 nwg-look
+obs-studio
 obsidian
 opencl-nvidia
 openssh
