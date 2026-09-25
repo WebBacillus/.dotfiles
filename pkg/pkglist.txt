@@ -73,6 +73,7 @@ efibootmgr
 efitools
 egl-wayland
 ethtool
+evtest
 ex-vi-compat
 exfatprogs
 f2fs-tools

@@ -12,6 +12,7 @@ gzdoom
 hyprwhspr
 mateengine
 microsoft-edge-stable-bin
+nbfc-linux
 ngrok
 playwright
 resterm-bin
