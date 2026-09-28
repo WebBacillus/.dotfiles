@@ -89,6 +89,7 @@ gimp
 git
 github-cli
 glances
+gnome-keyring
 gnome-system-monitor
 go-ethereum
 gparted
@@ -242,6 +243,7 @@ rsync
 s-nail
 sbctl
 sddm
+seahorse
 sg3_utils
 shelly
 shotcut
