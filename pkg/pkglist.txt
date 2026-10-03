@@ -216,6 +216,7 @@ plocate
 plymouth
 poppler-glib
 power-profiles-daemon
+proton-vpn-gtk-app
 protonup-qt
 pv
 python
