@@ -214,6 +214,7 @@ pkgfile
 playerctl
 plocate
 plymouth
+pnpm
 poppler-glib
 power-profiles-daemon
 proton-vpn-gtk-app
