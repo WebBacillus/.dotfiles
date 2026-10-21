@@ -1,5 +1,7 @@
+set -g fish_greeting
+
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    fastfetch --file "$__fish_config_dir/dot-art.txt"
 end
 
 bind --mode insert \cf forward-char
