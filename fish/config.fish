@@ -28,6 +28,8 @@ set -l os_name (uname)
 if test "$os_name" = "Darwin"
     # --- MacOS Specific Paths ---
     fish_add_path /Users/t.pasit.khumsena/.antigravity/antigravity/bin
+    fish_add_path /Users/pasitk.hu/.docker/bin
+    fish_add_path /Users/pasitk.hu/.local/bin
 
 else if test "$os_name" = "Linux"
     # --- Windows/WSL/Linux Specific Paths ---
