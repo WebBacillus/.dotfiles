@@ -77,6 +77,27 @@ change_layout() {
   return 0
 }
 
+# Show the newly active layout without stacking repeated notifications.
+show_layout_notification() {
+  local layout_label
+
+  case "$new_layout" in
+    us) layout_label="English (US)" ;;
+    th) layout_label="Thai (TH)" ;;
+    *) layout_label="${new_layout^^}${new_variant:+ ($new_variant)}" ;;
+  esac
+
+  notify-send \
+    --app-name="Keyboard Layout" \
+    --icon=input-keyboard-symbolic \
+    --urgency=low \
+    --expire-time=1500 \
+    --transient \
+    --hint=string:x-canonical-private-synchronous:keyboard-layout \
+    --hint=boolean:SWAYNC_BYPASS_DND:true \
+    "Keyboard Layout" "$layout_label"
+}
+
 
 # Stores values in layout_mapping, variant_mapping and layout_index
 if ! get_current_layout_info; then
@@ -108,6 +129,8 @@ elif [[ "$1" == "switch" ]]; then
     echo "Layout change failed." >&2
     exit 1
   fi
+
+  show_layout_notification
 else
   echo "Usage: $0 {status|switch}"
 fi

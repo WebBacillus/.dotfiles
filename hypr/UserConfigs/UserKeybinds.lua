@@ -93,3 +93,8 @@ hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("rofi -show drun"))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("hyprctl reload"))
 
 -- bindd = $mainMod, A, desktop overview, exec, $scriptsDir/OverviewToggle.sh # toggles quickshell or ags overview (tries QS first, falls back to AGS)
+--
+
+-- Switch language
+-- hl.unbind("SUPER + space")
+hl.bind("ALT + code:49", hl.dsp.exec_cmd(scriptsDir .. "/KeyboardLayout.sh switch"), { description = "switch keyboard layout globally" })
