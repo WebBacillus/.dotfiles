@@ -63,3 +63,9 @@ alias swww='awww'
 if type -q /home/linuxbrew/.linuxbrew/bin/brew
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
 end
+
+# kimi-code
+fish_add_path -g "/home/webbacillus/.kimi-code/bin"
+
+# Hermes Agent command
+fish_add_path "$HOME/.local/bin"
