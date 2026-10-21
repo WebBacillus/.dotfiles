@@ -5,7 +5,7 @@ handle() {
             MONITORS=$(hyprctl monitors -j | jq length)
             if [ "$MONITORS" -eq 0 ]; then
                 hyprctl eval 'hl.monitor({ output = "eDP-1", mode = "preferred", position = "auto", scale = 1, disabled = false })'
-                hyprctl dispatch dpms on eDP-1   # Wake the screen up
+                hyprctl dispatch 'hl.dsp.dpms({ action = "enable", monitor = "eDP-1" })'   # Wake the screen up
             fi
             ;;
     esac
