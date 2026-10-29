@@ -65,6 +65,7 @@ dmraid
 dnsmasq
 docx2txt
 dosfstools
+dotnet-runtime-8.0
 downgrade
 dracut
 duf
@@ -90,6 +91,7 @@ git
 github-cli
 glances
 gnome-keyring
+gnome-screenshot
 gnome-system-monitor
 go-ethereum
 gparted
@@ -111,6 +113,7 @@ hypridle
 hyprland
 hyprlock
 hyprpolkitagent
+hyprshutdown
 impala
 inetutils
 intel-lpmd
